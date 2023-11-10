@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double m, angle, d, w_l, Angle;
+
+    printf("Enter the order of the bright spot: ");
+    scanf("%lf", &m);
+    printf("Enter the slit separation(in micro meters): ");
+    scanf("%lf", &d);
+    printf("Enter the angle(in degree): ");
+    scanf("%lf", &angle);
+
+    angle*=(3.1416/180.00);
+    Angle=sin(angle);
+    w_l=((d*Angle)/m)*1000;
+    printf("\nThe wavelength of the light is: %lf nm\n", w_l);
+
+
+    if(w_l >= 380 && w_l <= 450)
+    {
+        printf("The color of the light is violet.\n");
+    }
+    else if( w_l >= 450 && w_l <=485)
+    {
+        printf("The color of the light is blue.\n");
+    }
+    else if( w_l >= 485 && w_l <=500)
+    {
+        printf("The color of the light is cyan.\n");
+    }
+    else if( w_l >= 500 && w_l <=565)
+    {
+        printf("The color of the light is green.\n");
+    }
+    else if( w_l >= 565 && w_l <=590)
+    {
+        printf("The color of the light is yellow.\n");
+    }
+    else if( w_l >= 590 && w_l <=625)
+    {
+        printf("The color of the light is orange.\n");
+    }
+    else if( w_l >= 625 && w_l <=750)
+    {
+        printf("The color of the light is red.\n");
+    }
+    else
+    {
+        printf("The color of the light is invisible.\n");
+    }
+}
